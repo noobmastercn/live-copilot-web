@@ -9,9 +9,3 @@
 cargo leptos watch
 cargo leptos build --release
 ```
-
-## 交叉编译
-```shell
-export CARGO_BUILD_TARGET=x86_64-unknown-linux-musl
-cargo leptos build --release
-```
