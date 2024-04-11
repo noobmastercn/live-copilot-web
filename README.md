@@ -1,11 +1,9 @@
-```shell
-cargo generate --git https://github.com/noobmastercn/leptos-ssr-template
-```
+# live-copilot 推广介绍页 
 
-```shell
-npm install -D tailwindcss
-npx tailwindcss init
-```
+- leptos ssr
+- seo为第一优先级
+
+## 相关命令
 
 ```shell
 cargo leptos watch

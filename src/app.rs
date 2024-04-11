@@ -1,9 +1,11 @@
-use crate::error_template::{AppError, ErrorTemplate};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use crate::css::CssClass::{AboutContainer, AboutH1, AboutP, Container, HomeButton, HomeContainer, HomeH2, HomeP, MyFooter, Nav, NavLink};
+
+use crate::css::CssClass::{Container, HomeButton, HomeContainer, HomeH2, HomeP, MyFooter, Nav, NavLink};
 use crate::css::Theme;
+use crate::error_template::{AppError, ErrorTemplate};
+use crate::pages::about::About;
 use crate::state::GlobalState;
 
 #[component]
@@ -72,21 +74,11 @@ fn Footer() -> impl IntoView {
     let state = use_context::<RwSignal<GlobalState>>().unwrap_or_default();
     view! {
         <footer class={move || MyFooter.get_css(state.get().theme)}>
-            <p class="font-bold">{"© 2024 Company Name. All rights reserved."}</p>
+            <p class="font-bold">{"© 2024 lilpum. All rights reserved."}</p>
         </footer>
     }
 }
 
-#[component]
-fn About() -> impl IntoView {
-    let state = use_context::<RwSignal<GlobalState>>().unwrap_or_default();
-    view! {
-        <div class={move || AboutContainer.get_css(state.get().theme)}>
-            <h1 class={move || AboutH1.get_css(state.get().theme)}>{"About Us"}</h1>
-            <p class={move || AboutP.get_css(state.get().theme)}>{"Here you can learn more about us."}</p>
-        </div>
-    }
-}
 
 
 #[component]
