@@ -6,6 +6,7 @@
 ## 相关命令
 
 ```shell
+cargo install cargo-leptos
 cargo leptos watch
 cargo leptos build --release
 ```
