@@ -1,12 +1,12 @@
 use leptos::{component, IntoView, RwSignal, SignalGet, use_context, view};
-use crate::css::CssClass::{AboutContainer, AboutH1, AboutP};
+use crate::css::CssClass::{AboutH1, AboutP};
 use crate::state::GlobalState;
 
 #[component]
 pub fn About() -> impl IntoView {
     let state = use_context::<RwSignal<GlobalState>>().unwrap_or_default();
     view! {
-        <div class={move || AboutContainer.get_css(state.get().theme)}>
+        <div class="text-center p-10 flex flex-col items-center">
             <h1 class={move || AboutH1.get_css(state.get().theme)}>{"About Me"}</h1>
             <p class={move || AboutP.get_css(state.get().theme)}>{"Here you can learn more about us."}</p>
             <a class="mx-auto my-7" href="https://github.com/noobmastercn">
