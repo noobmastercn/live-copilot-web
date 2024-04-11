@@ -31,6 +31,7 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 User=appuser
 Group=appuser
 Environment="LEPTOS_SITE_ADDR=0.0.0.0:3000"
+Environment="LEPTOS_SITE_ROOT=/home/appuser/site"
 WorkingDirectory=/home/appuser
 ExecStart=/home/appuser/live-copilot-web
 Restart=always
@@ -40,7 +41,7 @@ WantedBy=multi-user.target
 ```
 ```shell
 systemctl daemon-reload
-systemctl enable live-copilot-web
-systemctl start live-copilot-web
+systemctl restart live-copilot-web
 journalctl -f -u live-copilot-web
+systemctl enable live-copilot-web
 ```
