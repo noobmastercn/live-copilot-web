@@ -1,13 +1,12 @@
-use tracing::info;
-use live_copilot_web::util::logging::init_logging;
-
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
     use axum::Router;
     use leptos::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
-    use live_copilot_web::app::*;
+    use tracing::info;
+    use live_copilot_web::app::App;
+    use live_copilot_web::util::logging::init_logging;
     use live_copilot_web::fileserv::file_and_error_handler;
 
     // Initialize logging
