@@ -3,8 +3,7 @@ use leptos_meta::*;
 use leptos_router::*;
 
 use crate::components::nav_bar::NavBar;
-use crate::css::CssClass::{Container, HomeButton, HomeContainer, HomeH2, HomeP, MyFooter};
-use crate::css::Theme;
+use crate::css::CssClass::{Container, MyFooter};
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::about::About;
 use crate::pages::home::Home;

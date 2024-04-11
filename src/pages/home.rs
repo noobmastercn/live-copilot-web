@@ -23,6 +23,7 @@ pub fn Home() -> impl IntoView {
                 }}
                 " | Some more text"
             </button>
+        <img src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fe59a7428-887d-4578-8d2c-0b3ff4a78350%2Fe196cc81-f740-4bf4-a2e7-7767fb4803cf%2FUntitled.png?table=block&id=a7f484d2-c783-452d-bf95-338897542617&spaceId=e59a7428-887d-4578-8d2c-0b3ff4a78350&width=2000&userId=18003b6e-3f70-4a92-b6b6-8b2500cee160&cache=v2" alt="Leptos Logo" />
         </div>
     }
 }
