@@ -1,10 +1,10 @@
+use crate::css::CssClass::{ErrorContainer, ErrorPageA, ErrorPageH1, ErrorPageP};
+use crate::state::GlobalState;
 use http::status::StatusCode;
 use leptos::*;
 use leptos_router::A;
 use thiserror::Error;
 use tracing::error;
-use crate::css::CssClass::{ErrorPageA, ErrorContainer, ErrorPageH1, ErrorPageP};
-use crate::state::GlobalState;
 
 #[derive(Clone, Debug, Error)]
 pub enum AppError {

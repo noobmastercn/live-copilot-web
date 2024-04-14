@@ -1,8 +1,8 @@
 use leptos::{component, IntoView, RwSignal, SignalGet, SignalUpdate, use_context, view};
-use leptos_router::A;
 use wasm_bindgen::JsCast;
 use web_sys::{Event, HtmlSelectElement};
-use crate::css::CssClass::{Nav, NavLink, NavThemeSelect};
+
+use crate::css::CssClass::{Nav, NavThemeSelect};
 use crate::css::Theme;
 use crate::state::GlobalState;
 
@@ -12,27 +12,16 @@ pub fn NavBar() -> impl IntoView {
 
     view! {
         <nav class={move || Nav.get_css(state.get().theme)}>
-            <ul class="flex justify-between items-center py-4">
-                <div class="flex-grow"></div>
-                <div class="flex justify-center space-x-10">
-                    <li>
-                        <A href="/" class={move || NavLink.get_css(state.get().theme)}>
-                            {"Home"}
-                        </A>
-                    </li>
-                    <li>
-                        <A href="/about" class={move || NavLink.get_css(state.get().theme)}>
-                            {"About"}
-                        </A>
-                    </li>
-                </div>
-                <div class="flex-grow"></div>
+            <ul class="flex justify-between items-center">
+                <li class="flex items-center mr-7">
+                    <span class="text-xl font-bold italic pl-7">"live-copilot 🤖"</span>
+                </li>
                 <li>
                     <select class={move || NavThemeSelect.get_css(state.get().theme)}
                         on:change={move |e| update_theme_based_on_selection(state,e)}>
                         <option value="Dark">{"Dark"}</option>
                         <option value="Ig">{"Ig"}</option>
-                        <option value="Twitter">{"Twitter"}</option>
+                        <option value="Twitter">{"Tw"}</option>
                     </select>
                 </li>
             </ul>
@@ -42,7 +31,8 @@ pub fn NavBar() -> impl IntoView {
 
 /// 切换主题
 fn update_theme_based_on_selection(state: RwSignal<GlobalState>, e: Event) {
-    let selected_theme = e.target()
+    let selected_theme = e
+        .target()
         .and_then(|t| t.dyn_into::<HtmlSelectElement>().ok())
         .map(|t| t.value())
         .unwrap_or("Dark".to_string());

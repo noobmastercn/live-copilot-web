@@ -1,9 +1,9 @@
+use crate::util::local_timer::LocalTimer;
 use std::path::Path;
 use tracing::Level;
 use tracing_appender::non_blocking::WorkerGuard;
 use tracing_appender::{non_blocking, rolling};
 use tracing_subscriber::fmt::format::FmtSpan;
-use crate::util::local_timer::LocalTimer;
 
 // tracing使用教程 https://rust-book.junmajinlong.com/ch102/tracing.html
 pub fn init_logging() {

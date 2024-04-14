@@ -4,10 +4,10 @@ async fn main() {
     use axum::Router;
     use leptos::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
-    use tracing::info;
     use live_copilot_web::app::App;
-    use live_copilot_web::util::logging::init_logging;
     use live_copilot_web::fileserv::file_and_error_handler;
+    use live_copilot_web::util::logging::init_logging;
+    use tracing::info;
 
     // Initialize logging
     let _guard = init_logging();
@@ -29,7 +29,7 @@ async fn main() {
         .with_state(leptos_options);
 
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    info!("listening on http://{}", &addr);
+    info!("listening on http://localhost:{}", addr.port());
     axum::serve(listener, app.into_make_service())
         .await
         .unwrap();

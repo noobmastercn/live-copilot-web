@@ -3,7 +3,7 @@ use leptos_meta::*;
 use leptos_router::*;
 
 use crate::components::nav_bar::NavBar;
-use crate::css::CssClass::{Container, MyFooter};
+use crate::css::CssClass::{Container, Hr, MyFooter, NavLink};
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::about::About;
 use crate::pages::home::Home;
@@ -20,7 +20,8 @@ pub fn App() -> impl IntoView {
     view! {
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
-        <Stylesheet id="leptos" href="/pkg/live-copilot-web.css"/>
+        <Stylesheet id="tailwindcss" href="/pkg/live-copilot-web.css"/>
+        // <Stylesheet id="my-stylesheet" href="/my-style.css"/>
 
         // sets the document title
         <Title text="Welcome to Leptos"/>
@@ -48,17 +49,16 @@ pub fn App() -> impl IntoView {
     }
 }
 
-
-
-
 #[component]
 fn Footer() -> impl IntoView {
     let state = use_context::<RwSignal<GlobalState>>().unwrap_or_default();
     view! {
+        // <A href="/about" class={move || NavLink.get_css(state.get().theme)}>
+        //     "关于我"
+        // </A>
         <footer class={move || MyFooter.get_css(state.get().theme)}>
-            <p class="font-bold">{"© 2024 lilpum. All rights reserved."}</p>
+            <hr class={move || Hr.get_css(state.get().theme)} />
+            <p class="font-bold">{"© 2024 lilpum. All rights reserved.  "}   <A href="/about">"| 关于我"</A></p>
         </footer>
     }
 }
-
-

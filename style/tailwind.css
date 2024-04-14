@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-purple-green {
+    background: linear-gradient(to right, #9D50BB, #38B2AC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.gradient-pink-white {
+    background: linear-gradient(to right, #FFB6C1, #FFFFFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.gradient-pink-lightblue {
+    background: linear-gradient(to right, #FFC0CB, #ADD8E6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
